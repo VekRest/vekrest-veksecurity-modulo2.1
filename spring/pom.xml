@@ -23,7 +23,33 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>11.0.10</version>
+        </dependency>
         <!-- BOOT -->
+
+        <!-- LOG -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.17</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>de.siegmar</groupId>
+            <artifactId>logback-gelf</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <!-- LOG -->
 
         <!-- SECURITY -->
         <dependency>
@@ -67,6 +93,16 @@
         </dependency>
         <!-- SWAGGER -->
 
+        <!-- DOMAIN -->
+        <dependency>
+            <groupId>com.vekrest</groupId>
+            <artifactId>domain</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- DOMAIN -->
+
+        <!-- TEST -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -79,6 +115,7 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+        <!-- TEST -->
     </dependencies>
 
     <build>
