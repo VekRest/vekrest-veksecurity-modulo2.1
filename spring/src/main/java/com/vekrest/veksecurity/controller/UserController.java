@@ -20,7 +20,7 @@ public class UserController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/security/user/save")
+    @PostMapping("/veksecurity/user/save")
     public UserResponse save(@RequestBody UserRequest request) {
         User save = repository.save(UserControllerAdapter.cast(request));
         return new UserResponse(

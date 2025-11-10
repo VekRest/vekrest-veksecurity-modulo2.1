@@ -20,7 +20,7 @@ public class AuthController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PostMapping("/security/login")
+    @PostMapping("/veksecurity/login")
     public AuthResponse login(@RequestBody UserRequest request) {
         Token token = tokenSecurity.generateToken(UserControllerAdapter.cast(request));
         return new AuthResponse(token.value());

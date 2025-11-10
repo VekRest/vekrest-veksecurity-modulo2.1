@@ -45,14 +45,20 @@ public class SecurityConfig {
                         SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
+                                "/v3/api-docs/**",
+                                "/vekrest/vekclient/v3/api-docs/**",
+                                "/vekrest/veksecurity/v3/api-docs/**",
                                 "/swagger-ui/**",
-                                 "/v3/api-docs/**",
-                                 "/swagger-ui.html",
-                                "/vekrest/security/user/save/**",
-                                "/vekrest/security/login/**")
+                                "/vekrest/vekclient/swagger-ui/**",
+                                "/vekrest/veksecurity/swagger-ui/**",
+
+                                "/vekrest/veksecurity/user/save/**",
+                                "/vekrest/veksecurity/login/**"
+                        )
                         .permitAll()
                         .anyRequest()
-                        .authenticated())
+                        .authenticated()
+                )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
         return httpSecurity.build();
     }
