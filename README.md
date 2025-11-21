@@ -1,6 +1,6 @@
 # 🧬 Projeto VekRest - VekSecurity - Módulo 2.1
 
-Login VekSecurity: Segurnça da aplicação com criação e login de usuários via Spring Boot com Docker e Maven. **Módulo 2.1 / Login**
+VekSecurity: Segurança da aplicação com login de usuários via Spring Boot com Docker e Maven. **Módulo 2.1 / Login**
 
 > ATENÇÃO: VÁ ATÉ OS REPOSITÓRIOS DAS PARTES DO MÓDULO 2 E SIGA AS INSTRUÇÕES DE EXECUÇÃO DO README DE CADA APLICAÇÃO PARA RODAR A APLICAÇÃO COMPLETA!
 
