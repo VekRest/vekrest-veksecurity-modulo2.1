@@ -4,14 +4,30 @@
     <parent>
         <groupId>com.vekrest</groupId>
         <artifactId>veksecurity</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>v1.0.0</version>
     </parent>
 
     <artifactId>spring</artifactId>
     <packaging>jar</packaging>
 
     <name>spring</name>
-    <url>http://maven.apache.org</url>
+    <description>Módulo da aplicação do VekRest VekSecurity</description>
+    <url>https://github.com/VekRest/vekrest-veksecurity-modulo2.1</url>
+
+    <licenses>
+        <license>
+            <name>GPL-3.0</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.en.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>devVekRest</id>
+            <name>Victor Novaes Cardoso (Vek)</name>
+            <email>victorncardoso1912@gmail.com</email>
+        </developer>
+    </developers>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

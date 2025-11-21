@@ -10,11 +10,20 @@ services:
       - "TZ=America/Sao_Paulo"
     ports:
       - "27017:27017"
+    healthcheck:
+      test: [ "CMD", "mongosh", "--eval", "db.adminCommand('ping')" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
 
   opensearch:
     image: opensearchproject/opensearch:2.4.0
     hostname: opensearch
     container_name: opensearch
+    depends_on:
+      mongodb:
+        condition: service_healthy
     environment:
       - discovery.type=single-node
       - plugins.security.disabled=true
@@ -26,7 +35,7 @@ services:
       - "9200:9200"
       - "9600:9600"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9200"]
+      test: [ "CMD", "curl", "-f", "http://localhost:9200" ]
       interval: 10s
       timeout: 10s
       retries: 10
@@ -37,10 +46,10 @@ services:
     hostname: graylog
     container_name: graylog
     depends_on:
+      mongodb:
+        condition: service_healthy
       opensearch:
         condition: service_healthy
-      mongodb:
-        condition: service_started
     environment:
       GRAYLOG_PASSWORD_SECRET: "f62c92ac283e4f1f969ad5e71d4c7b2e11e9bdbf5e193ae7bb4e9b4e1e956e437c98a43cd624c5ea8a2c97b9463f96e8"
       GRAYLOG_ROOT_PASSWORD_SHA2: "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
@@ -52,3 +61,19 @@ services:
       - "9000:9000"
       - "12201:12201/udp"
     restart: on-failure
+
+#  veksecurity:
+#    image: vekrest/veksecurity:latest
+#    hostname: veksecurity
+#    container_name: veksecurity
+#    environment:
+#      SERVER_PORT: 8081
+#      SECRET_KEY: "vekrest!A$9zLq#2vNf@eR6tYpWmZcXbGdQh"
+#      MONGODB_URI: mongodb://mongodb:27017/vekrest?serverSelectionTimeoutMs=15000&connectTimeoutMS=15000
+#    depends_on:
+#      mongodb:
+#        condition: service_healthy
+#      opensearch:
+#        condition: service_healthy
+#      graylog:
+#        condition: service_started
