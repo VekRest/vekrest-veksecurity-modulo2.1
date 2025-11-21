@@ -132,6 +132,14 @@ jobs:
             ${{ secrets.DOCKERHUB_USER }}/vekrest-veksecurity:latest
             ${{ secrets.DOCKERHUB_USER }}/vekrest-veksecurity:${{ steps.vars.outputs.IMAGE_TAG }}
 
+      - name: Update DockerHub README
+        uses: peter-evans/dockerhub-description@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USER }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: ${{ secrets.DOCKERHUB_USER }}/vekrest-veksecurity
+          readme-filepath: ./README.md
+
   github-packages-maven-publish:
     name: Publish Maven Image (Github Pages)
     needs: sonarcloud-analysis
