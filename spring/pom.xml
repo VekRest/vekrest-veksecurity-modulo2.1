@@ -111,7 +111,7 @@
 
         <!-- DOMAIN -->
         <dependency>
-            <groupId>com.vekrest</groupId>
+            <groupId>com.vekrest.veksecurity</groupId>
             <artifactId>domain</artifactId>
             <version>v1.0.0</version>
             <scope>compile</scope>
