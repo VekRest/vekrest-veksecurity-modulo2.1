@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/vekrest")
+@RequestMapping("/vekrest/veksecurity")
 public class UserController {
     private final UserRepository repository;
 
@@ -20,7 +20,7 @@ public class UserController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/veksecurity/user/save")
+    @PostMapping("/user/save")
     public UserResponse save(@RequestBody UserRequest request) {
         User save = repository.save(UserControllerAdapter.cast(request));
         return new UserResponse(

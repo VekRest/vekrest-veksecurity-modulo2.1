@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/vekrest")
+@RequestMapping("/vekrest/veksecurity")
 public class AuthController {
     private final TokenSecurity tokenSecurity;
 
@@ -20,7 +20,7 @@ public class AuthController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PostMapping("/veksecurity/login")
+    @PostMapping("/login")
     public AuthResponse login(@RequestBody UserRequest request) {
         Token token = tokenSecurity.generateToken(UserControllerAdapter.cast(request));
         return new AuthResponse(token.value());
