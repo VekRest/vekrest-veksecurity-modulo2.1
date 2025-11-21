@@ -5,7 +5,7 @@
     <option name="envFilePaths">
       <option value="$PROJECT_DIR$/spring/src/main/resources/application-local.properties" />
     </option>
-    <option name="MAIN_CLASS_NAME" value="veksecurity.com.vekrest.veksecurity.VeksecurityApplication" />
+    <option name="MAIN_CLASS_NAME" value="com.vekrest.veksecurity.veksecurity.VeksecurityApplication" />
     <module name="spring" />
     <method v="2">
       <option name="Make" enabled="true" />
