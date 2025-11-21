@@ -169,14 +169,6 @@ para mais detalhes.
 
 ---
 
-## ✨ Deploy (DockerHub)
-
-> A imagem desta aplicação é atualizada a cada atualização na [branch main](https://github.com/VekRest/vekrest-veksecurity-modulo2.1/tree/main)
-
-> Link da imagem no DockerHub: [vek03/vekrest-veksecurity:latest](https://hub.docker.com/repository/docker/vek03/vekrest-veksecurity)
-
----
-
 ## ✅ Qualidade (SonarQube)
 
 > Este projeto tem qualidade analisada pelo SonarQube Cloud. Verifique nos badges!
