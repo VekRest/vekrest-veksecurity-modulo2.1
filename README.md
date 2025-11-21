@@ -70,6 +70,8 @@ services:
     image: vek03/vekrest-veksecurity:latest
     hostname: veksecurity
     container_name: veksecurity
+    ports:
+      - "8081:8081"
     environment:
       SERVER_PORT: 8081
       SECRET_KEY: "vekrest!A$9zLq#2vNf@eR6tYpWmZcXbGdQh"
