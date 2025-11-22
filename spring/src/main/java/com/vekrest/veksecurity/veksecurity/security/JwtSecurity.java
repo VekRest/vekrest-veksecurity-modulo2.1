@@ -3,6 +3,7 @@ package com.vekrest.veksecurity.veksecurity.security;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import javax.crypto.SecretKey;
@@ -10,7 +11,9 @@ import java.util.Date;
 
 @Component
 public class JwtSecurity {
-    private static final String SECRET = "vekrest!A$9zLq#2vNf@eR6tYpWmZcXbGdQh";
+    @Value("${secret.key}")
+    private String SECRET;
+
     //nunca expirar
     private static final long EXP = 100L * 365 * 24 * 60 * 60 * 1000;
 
