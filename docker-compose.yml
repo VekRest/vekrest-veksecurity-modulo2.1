@@ -70,6 +70,8 @@ services:
 #      SERVER_PORT: 8081
 #      SECRET_KEY: "vekrest!A$9zLq#2vNf@eR6tYpWmZcXbGdQh"
 #      MONGODB_URI: mongodb://mongodb:27017/vekrest?serverSelectionTimeoutMs=15000&connectTimeoutMS=15000
+#      GRAYLOG_HOST: graylog
+#      GRAYLOG_PORT: 12201
 #    depends_on:
 #      mongodb:
 #        condition: service_healthy
