@@ -48,12 +48,13 @@ public class SecurityConfig {
                                 "/v3/api-docs/**",
                                 "/vekrest/vekclient/v3/api-docs/**",
                                 "/vekrest/veksecurity/v3/api-docs/**",
+
                                 "/swagger-ui/**",
                                 "/vekrest/vekclient/swagger-ui/**",
                                 "/vekrest/veksecurity/swagger-ui/**",
 
-                                "/vekrest/veksecurity/user/save/**",
-                                "/vekrest/veksecurity/login/**"
+                                "/vekrest/veksecurity/v1/user/save/**",
+                                "/vekrest/veksecurity/v1/login/**"
                         )
                         .permitAll()
                         .anyRequest()
