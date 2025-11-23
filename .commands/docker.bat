@@ -13,7 +13,7 @@ echo Excluindo imagem Docker: vekrest/%%M:latest ANTIGA...
 docker rmi vekrest/%MODULE%:latest
 
 if errorlevel 1 (
-	goto error_exit
+	echo [WARN] Nao ha imagem Docker ou ela esta em uso e nao pode ser deletada
 )
 
 echo Construindo imagem Docker: vekrest/%%M:latest NOVA...
