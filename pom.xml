@@ -2,19 +2,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.5.7</version>
-		<relativePath/>
-	</parent>
+
 	<groupId>com.vekrest.veksecurity</groupId>
 	<artifactId>veksecurity</artifactId>
 	<version>v1.0.0</version>
     <packaging>pom</packaging>
+
     <name>veksecurity</name>
 	<description>VekMódulo de Segurança implementando Login</description>
 	<url>https://github.com/VekRest/vekrest-veksecurity-modulo2.1</url>
+
 	<licenses>
 		<license>
 			<name>GPL-3.0</name>
@@ -29,15 +26,18 @@
 			<email>victorncardoso1912@gmail.com</email>
 		</developer>
 	</developers>
+
     <modules>
         <module>domain</module>
 		<module>spring</module>
 	</modules>
+
 	<properties>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<sonar.projectKey>veksecurity</sonar.projectKey>
 		<sonar.organization>vekrest</sonar.organization>
 	</properties>
+
 	<distributionManagement>
 		<repository>
 			<id>github</id>
