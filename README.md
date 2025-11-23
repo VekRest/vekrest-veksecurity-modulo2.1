@@ -37,11 +37,13 @@ VekSecurity: Segurança da aplicação com login de usuários via Spring Boot co
 
 ## 1.2 ⚙ Variáveis de ambiente necessárias para rodar o container:
 
-| Variável       | Descrição                        | Exemplo                                                                                 |
-|----------------|----------------------------------|-----------------------------------------------------------------------------------------|
-| `SERVER_PORT`  | Porta onde a aplicação irá rodar | `8081`                                                                                  |
-| `SECRET_KEY`   | Chave do JWT                     | `vekrest!Afwedfuihosedwfbgri8uoef`                                                      |
-| `MONGODB_URI`  | URI do MongoDB                   | `mongodb://mongodb:27017/vekrest?serverSelectionTimeoutMs=15000&connectTimeoutMS=15000` |
+| Variável           | Descrição                        | Exemplo                                                                                |
+|--------------------|----------------------------------|----------------------------------------------------------------------------------------|
+| `SERVER_PORT`      | Porta onde a aplicação irá rodar | `8081`                                                                                 |
+| `SECRET_KEY`       | Chave do JWT                     | `vekrest!Afwedfuihosedwfbgri8uoef`                                                     |
+| `MONGODB_URI`      | URI do MongoDB                   | `mongodb://mongodb:27017/vekrest?serverSelectionTimeoutMs=15000&connectTimeoutMS=15000` |
+| `GRAYLOG_HOST`     | Endereço do Graylog              | `graylog`                                                                              |
+| `GRAYLOG_PORT`     | Porta do Graylog                 | `12201`                                                                                |
 
 ---
 
@@ -59,6 +61,8 @@ docker run -d \
   -e SERVER_PORT=8081 \
   -e SECRET_KEY=vekrest!Afwedfuihosedwfbgri8uoef \
   -e MONGODB_URI=mongodb://mongodb:27017/vekrest?serverSelectionTimeoutMs=15000&connectTimeoutMS=15000 \
+  -e GRAYLOG_HOST=graylog \
+  -e GRAYLOG_PORT=12201 \
   -p 8081:8081 \
   vek03/vekrest-veksecurity:latest
 ```
