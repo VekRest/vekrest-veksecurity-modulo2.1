@@ -19,7 +19,7 @@ VekSecurity: Segurança da aplicação com login de usuários via Spring Boot co
 
 > A imagem desta aplicação é atualizada a cada nova tag ou pull request na [branch main](https://github.com/VekRest/vekrest-veksecurity-modulo2.1/tree/main)
 
-> Link da imagem no DockerHub: [vek03/vekrest-veksecurity:latest](https://hub.docker.com/repository/docker/vek03/vekrest-veksecurity)
+> Link da imagem no DockerHub: [vek03/vekrest-veksecurity:latest](https://hub.docker.com/r/vek03/vekrest-veksecurity)
 
 ---
 
@@ -30,8 +30,8 @@ VekSecurity: Segurança da aplicação com login de usuários via Spring Boot co
 | MongoDB    | `mongo:latest`                       | https://hub.docker.com/_/mongo                                                                                                                  |
 | OpenSearch | `opensearchproject/opensearch:2.4.0` | https://hub.docker.com/layers/opensearchproject/opensearch/2.4.0/images/sha256-c8681472b70d46e7de61fe770d288a972f84b3f122f3c74ca06ea525264b6fd5 |
 | Graylog    | `graylog/graylog:5.1.5`              | https://hub.docker.com/layers/graylog/graylog/5.1.5/images/sha256-3b6967572e88731eacfa661e6d7ca41da3e259bc5eb041e58fb10e4deb823dcb              |
-| VekGateway | `vek03/vekrest-vekgateway:latest`    | https://hub.docker.com/repository/docker/vek03/vekrest-vekgateway                                                                               |
-| VekClient  | `vek03/vekrest-vekclient:latest`     | https://hub.docker.com/repository/docker/vek03/vekrest-vekclient                                                                                |
+| VekGateway | `vek03/vekrest-vekgateway:latest`    | https://hub.docker.com/r/vek03/vekrest-vekgateway                                                                                               |
+| VekClient  | `vek03/vekrest-vekclient:latest`     | https://hub.docker.com/r/vek03/vekrest-vekclient                                                                                                |
 
 ---
 
@@ -267,7 +267,7 @@ git tag <version>
 git push origin <version>
 ```
 
-[![VekGateway CI/CD Workflow](https://github.com/VekRest/vekrest-veksecurity-modulo2/actions/workflows/main.yml/badge.svg)](https://github.com/VekRest/vekrest-veksecurity-modulo2/actions/workflows/main.yml)
+[![VekSecurity CI/CD Workflow](https://github.com/VekRest/vekrest-veksecurity-modulo2.1/actions/workflows/main.yml/badge.svg)](https://github.com/VekRest/vekrest-veksecurity-modulo2.1/actions/workflows/main.yml)
 
 ---
 
@@ -280,7 +280,7 @@ git push origin <version>
 
 ## Postman Collection
 
-> Link para download da coleção Postman utilizada nos testes da API: [Postman Collection VekRest](https://web.postman.co/workspace/My-Workspace~e702bcc2-18e9-41e7-86d7-21df963c99df/folder/33703402-f59218e7-8804-436c-8866-2693c75b9eb6?action=share&source=copy-link&creator=33703402&ctx=documentation)
+> Link para download da coleção Postman utilizada nos testes da API: [Postman Collection VekRest](https://www.postman.com/aviation-pilot-88658184/workspace/my-workspace/folder/33703402-dad9baf5-9c1b-4010-a4c7-7ace385191fd?action=share&source=copy-link&creator=33703402&ctx=documentation)
 
 > Alternativamente, você pode utilizar o Swagger UI para testar a API:
 [Swagger UI VekRest VekSecurity Módulo 2.1](http://localhost:8081/vekrest/veksecurity/swagger-ui.html) (rodando localmente)
