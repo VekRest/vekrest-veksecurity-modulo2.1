@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/vekrest/veksecurity/v1")
+@RequestMapping("/v1")
 public class AuthController {
     private final TokenSecurity tokenSecurity;
 
