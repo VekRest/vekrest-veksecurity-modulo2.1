@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/v1")
+@RequestMapping("/vekrest/veksecurity/v1")
 public class UserController {
     private final UserRepository repository;
 
