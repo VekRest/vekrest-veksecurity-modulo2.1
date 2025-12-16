@@ -30,14 +30,17 @@ public class RestExceptionHandler {
     @ExceptionHandler({InternalServerException.class, Exception.class})
     public ErrorResponse handleInternalServerError(
             Exception exception,
-            HttpServletRequest request) {
+            HttpServletRequest request
+    ) {
         LOG.error("Erro não mapeado {}", exception);
+
         return new ErrorResponse(
                 LocalDateTime.now(),
                 request.getServletPath(),
                 INTERNAL_SERVER_ERROR.value(),
                 INTERNAL_SERVER_ERROR.getReasonPhrase(),
-                exception.getMessage());
+                exception.getMessage()
+        );
     }
 
     @ResponseBody
@@ -45,14 +48,15 @@ public class RestExceptionHandler {
     @ExceptionHandler(NotFoundException.class)
     public ErrorResponse handleNotFoundError(
             NotFoundException exception,
-            HttpServletRequest request) {
-        LOG.info("HANDLE ERROR ON NOT_FOUND");
+            HttpServletRequest request
+    ) {
         return new ErrorResponse(
                 LocalDateTime.now(),
                 request.getServletPath(),
                 NOT_FOUND.value(),
                 NOT_FOUND.getReasonPhrase(),
-                exception.getMessage());
+                exception.getMessage()
+        );
     }
 
     @ResponseBody
@@ -60,14 +64,15 @@ public class RestExceptionHandler {
     @ExceptionHandler(NoResourceFoundException.class)
     public ErrorResponse handleNoResourceFoundException(
             NotFoundException exception,
-            HttpServletRequest request) {
-        LOG.info("HANDLE ERROR ON NO_RESOURCE_FOUND");
+            HttpServletRequest request
+    ) {
         return new ErrorResponse(
                 LocalDateTime.now(),
                 request.getServletPath(),
                 NOT_FOUND.value(),
                 NOT_FOUND.getReasonPhrase(),
-                exception.getMessage());
+                exception.getMessage()
+        );
     }
 
     @ResponseBody
@@ -75,14 +80,15 @@ public class RestExceptionHandler {
     @ExceptionHandler(UsernameNotFoundException.class)
     public ErrorResponse handleUsernameNotFoundException(
             NotFoundException exception,
-            HttpServletRequest request) {
-        LOG.info("HANDLE ERROR ON USERNAME_NOT_FOUND");
+            HttpServletRequest request
+    ) {
         return new ErrorResponse(
                 LocalDateTime.now(),
                 request.getServletPath(),
                 NOT_FOUND.value(),
                 NOT_FOUND.getReasonPhrase(),
-                exception.getMessage());
+                exception.getMessage()
+        );
     }
 
     @ResponseBody
@@ -90,14 +96,15 @@ public class RestExceptionHandler {
     @ExceptionHandler(BadRequestException.class)
     public ErrorResponse handleBadRequest(
             BadRequestException exception,
-            HttpServletRequest request) {
-        LOG.info("HANDLE ERROR ON BAD_REQUEST");
+            HttpServletRequest request
+    ) {
         return new ErrorResponse(
                 LocalDateTime.now(),
                 request.getServletPath(),
                 BAD_REQUEST.value(),
                 BAD_REQUEST.getReasonPhrase(),
-                exception.getMessage());
+                exception.getMessage()
+        );
     }
 
     @ResponseBody
@@ -105,14 +112,15 @@ public class RestExceptionHandler {
     @ExceptionHandler(UnprocessableEntityException.class)
     public ErrorResponse handleUnprocessableEntity(
             UnprocessableEntityException exception,
-            HttpServletRequest request) {
-        LOG.info("HANDLE ERROR ON UNPROCESSABLE_ENTITY");
+            HttpServletRequest request
+    ) {
         return new ErrorResponse(
                 LocalDateTime.now(),
                 request.getServletPath(),
                 UNPROCESSABLE_ENTITY.value(),
                 UNPROCESSABLE_ENTITY.getReasonPhrase(),
-                exception.getMessage());
+                exception.getMessage()
+        );
     }
 
     @ResponseBody
@@ -120,16 +128,18 @@ public class RestExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ErrorResponse handleMethodArgumentNotValid(
             MethodArgumentNotValidException ex,
-            HttpServletRequest request) {
-        LOG.info("HANDLE ERROR ON METHOD_ARGUMENT_NOT_VALID");
+            HttpServletRequest request
+    ) {
         List<String> errors = new ArrayList<>();
         ex.getBindingResult().getAllErrors()
                 .forEach(v -> errors.add(v.getDefaultMessage()));
+
         return new ErrorResponse(
                 LocalDateTime.now(),
                 request.getServletPath(),
                 BAD_REQUEST.value(),
                 BAD_REQUEST.getReasonPhrase(),
-                errors.toString());
+                errors.toString()
+        );
     }
 }
