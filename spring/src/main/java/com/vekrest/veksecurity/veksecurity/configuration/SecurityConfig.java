@@ -26,11 +26,11 @@ public class SecurityConfig {
     public AuthenticationManager authenticationManager(
             HttpSecurity httpSecurity,
             PasswordEncoder passwordEncoder,
-            UserDetailsService userDetailsService) throws Exception {
-        AuthenticationManagerBuilder builder = httpSecurity
-                .getSharedObject(AuthenticationManagerBuilder.class);
-        builder.userDetailsService(userDetailsService).
-                passwordEncoder(passwordEncoder);
+            UserDetailsService userDetailsService
+    ) throws Exception {
+        AuthenticationManagerBuilder builder = httpSecurity.getSharedObject(AuthenticationManagerBuilder.class);
+        builder.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
+
         return builder.build();
     }
 
@@ -38,8 +38,10 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(
             JwtSecurity jwtSecurity,
             HttpSecurity httpSecurity,
-            UserDetailsService userDetails) throws Exception {
+            UserDetailsService userDetails
+    ) throws Exception {
         JwtAuthFilterSecurity jwtFilter = new JwtAuthFilterSecurity(jwtSecurity, userDetails);
+
         httpSecurity.csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(sm -> sm.sessionCreationPolicy(
                         SessionCreationPolicy.STATELESS))
@@ -54,13 +56,18 @@ public class SecurityConfig {
                                 "/vekrest/veksecurity/swagger-ui/**",
 
                                 "/vekrest/veksecurity/v1/user/save/**",
-                                "/vekrest/veksecurity/v1/login/**"
+                                "/vekrest/veksecurity/v1/login/**",
+
+                                "/actuator/**",
+                                "/vekrest/veksecurity/actuator/**",
+                                "/vekrest/vekclient/actuator/**"
                         )
                         .permitAll()
                         .anyRequest()
                         .authenticated()
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+
         return httpSecurity.build();
     }
 }

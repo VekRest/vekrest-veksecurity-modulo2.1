@@ -30,7 +30,7 @@ public class VeksecurityApplication implements CommandLineRunner {
 	}
 
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) {
 		LOG.info("VEKREST -> VEKSECURITY - INICIALIZADO COM SUCESSO!");
 
 		User system = new User(
